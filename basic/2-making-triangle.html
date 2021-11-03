@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c) {
+                let answer = "YES",
+                    max;
+                let total = a + b + c;
+                // max에 a,b,c 중 가장 큰 값 저장
+                if (a > b) max = a;
+                else max = b;
+                if (c > max) max = c;
+                // 최대값 외 두 값의 합과 비교
+                if (total - max <= max) answer = "NO";
+                return answer;
+            }
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>
