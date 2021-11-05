@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str) {
+                let answer;
+                // console.log(str.indexOf("time"));
+                // filter 새로운 배열을 생성
+                answer = str.filter(
+                    (val, i) => str.indexOf(val) === i
+                    /* { if (str.indexOf(val) === i) return true; 
+                    // return s.indexOf(val) === i;
+                    } */
+                );
+                return answer;
+            }
+            let str = ["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
