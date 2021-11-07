@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr) {
+                // 최대값 저장
+                let answer = Number.MIN_SAFE_INTEGER;
+                // 열크기
+                let n = arr.length;
+                // 행, 열
+                let sum1 = (sum2 = 0);
+                for (let i = 0; i < n; i++) {
+                    sum1 = sum2 = 0;
+                    for (let j = 0; j < n; j++) {
+                        // i행의 합
+                        sum1 += arr[i][j];
+                        // j열의 합
+                        sum2 += arr[j][i];
+                    }
+                    answer = Math.max(answer, sum1, sum2);
+                }
+                // 대각선
+                sum1 = sum2 = 0;
+                for (let i = 0; i < n; i++) {
+                    sum1 += arr[i][i];
+                    sum2 += arr[i][n - i - 1];
+                }
+                answer = Math.max(answer, sum1, sum2);
+
+                return answer;
+            }
+
+            let arr = [
+                [10, 13, 10, 12, 15],
+                [12, 39, 30, 23, 11],
+                [11, 25, 50, 53, 15],
+                [19, 27, 29, 37, 27],
+                [19, 13, 30, 13, 19],
+            ];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
