@@ -1,3 +1,5 @@
+// https://programmers.co.kr/learn/courses/30/lessons/77884
+
 function getDivisor(num) {
     let cnt = 0;
     for (let i = 1; i <= num; i++) {
