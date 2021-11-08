@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str) {
+                /* let answer = "";
+                const s = str.replace(/[^0-9]/g, "");
+                answer = parseInt(s); // parseInt(s, 10); */
+
+                /* let answer = "";
+                for (let x of str) {
+                    // if (x >= 0 && x <= 9) answer += x;
+                    if (!isNaN(x)) answer += x;
+                }
+                // parseInt하면 앞의 0 삭제
+                return parseInt(answer); */
+
+                let answer = 0;
+                for (let x of str) {
+                    if (!isNaN(x)) answer = answer * 10 + Number(x);
+                }
+                return answer;
+            }
+
+            let str = "g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
