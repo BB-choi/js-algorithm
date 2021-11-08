@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "YES";
+                // 소문자가 아닌것들을 빈 문자열로 변경 (정규식)
+                let str = s.toLowerCase().replace(/[^a-z]/g, "");
+                // console.log(str.split("").reverse());
+                // console.log(str.split(""));
+
+                // join("") -> el1el2el3
+                // join() -> el1,el2,el3
+                if (str.split("").reverse().join("") !== str) return "NO";
+                return answer;
+            }
+
+            // let str = "found7, time: study; Yduts; emit, 7Dnuof";
+            let str = "found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

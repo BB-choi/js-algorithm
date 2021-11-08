@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "YES";
+                let str = s.toLowerCase();
+                /* let len = str.length;
+                for (let i = 0; i < Math.floor(len / 2); i++) {
+                    if (str[i] !== str[len - i - 1]) answer = "NO"; // return "NO";
+                } */
+                // reverse 사용 위해 배열로 만들기
+                //console.log(str.split("").reverse().join());
+                // console.log(str.split(""));
+                // console.log(str.split("").reverse());
+                if (str.split("").join() !== str.split("").reverse().join())
+                    answer = "NO";
+                return answer;
+            }
+
+            let str = "goog";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
