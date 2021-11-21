@@ -38,6 +38,8 @@ var input = fs.readFileSync('/dev/stdin').toString().split(' ');
 -   `fs.readFileSync(경로)` : '경로'의 파일을 동기적으로 읽어와서 그 내용을 input 변수에 할당한다.
 -   `toString().split(' ')` : 읽어온 내용을 공백(' ')을 기준으로 Array에 저장
 
+    💡 문자열을 만들어 준 후에, `trim()`으로 공백을 제거해 주어야 통과하는 경우도 있음
+
 ### input배열의 값을 별도 변수에 할당
 
 ```
