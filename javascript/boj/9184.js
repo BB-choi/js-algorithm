@@ -22,7 +22,14 @@ function wFunc(a, b, c) {
     }
     if (a > 20 || b > 20 || c > 20) {
         // w[a][b][c]에 값 대입해주고 return
-        return (w[a][b][c] = wFunc(20, 20, 20));
+
+        // if (w[20][20][20] > 0) {
+        //     return w[20][20][20];
+        // } else {
+        //     return (w[20][20][20] = wFunc(20, 20, 20));
+        // }
+
+        return wFunc(20, 20, 20);
     }
     if (w[a][b][c] > 0) {
         // 값이 있으면 그 값을 꺼내쓰기
@@ -41,18 +48,18 @@ function wFunc(a, b, c) {
 }
 
 // 다차원 배열 만들기
-let w = new Array(51);
-for (let i = 0; i <= 50; i++) {
-    w[i] = new Array(51);
-    for (let j = 0; j <= 50; j++) {
-        w[i][j] = new Array(51);
+let w = new Array(21);
+for (let i = 0; i <= 20; i++) {
+    w[i] = new Array(21);
+    for (let j = 0; j <= 20; j++) {
+        w[i][j] = new Array(21);
     }
 }
 
 // 0으로 채워놓기
-for (let i = 0; i < 51; i++) {
-    for (let j = 0; j < 51; j++) {
-        for (let k = 0; k < 51; k++) {
+for (let i = 0; i < 21; i++) {
+    for (let j = 0; j < 21; j++) {
+        for (let k = 0; k < 21; k++) {
             w[i][j][k] = 0;
         }
     }
