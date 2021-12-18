@@ -31,9 +31,9 @@ for (let i = 0; i < 8; i++) {
             flag = 1;
             break;
         }
-        if (flag) {
-            break;
-        }
+    }
+    if (flag) {
+        break;
     }
 }
 
