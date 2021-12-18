@@ -13,7 +13,7 @@ let dwarfs = require("fs")
 //     .split("\n")
 //     .map(Number);
 
-let dwarfsHeight = 0;
+/* let dwarfsHeight = 0;
 
 // for (let i = 0; i < 9; i++) {
 //     dwarfsHeight += dwarfs[i];
@@ -45,3 +45,26 @@ for (let i = 0; i < 9; i++) {
 
 answer.sort((a, b) => a - b);
 console.log(answer.join("\n"));
+ */
+
+dwarfs.sort((a, b) => a - b);
+let dwarfsHeight = 0;
+dwarfsHeight = dwarfs.reduce((a, b) => a + b);
+
+let flag = 0;
+for (let i = 0; i < 8; i++) {
+    for (let j = i + 1; j < 9; j++) {
+        if (dwarfsHeight - (dwarfs[i] + dwarfs[j]) === 100) {
+            flag = 1;
+            for (let k = 0; k < 9; k++) {
+                if (k !== i && k !== j) {
+                    console.log(dwarfs[k]);
+                }
+            }
+            break;
+        }
+    }
+    if (flag) {
+        break;
+    }
+}
