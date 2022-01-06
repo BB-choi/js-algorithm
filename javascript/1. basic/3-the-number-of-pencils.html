@@ -6,9 +6,16 @@
     <body>
         <script>
             function solution(n) {
+                let dozen = parseInt(n / 12);
+                if (n % 12) {
+                    dozen++;
+                }
+
+                return dozen;
+
                 // 올림
-                let answer = Math.ceil(n / 12);
-                return answer;
+                // let answer = Math.ceil(n / 12);
+                // return answer;
             }
             console.log(solution(25));
         </script>

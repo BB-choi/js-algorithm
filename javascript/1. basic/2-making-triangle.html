@@ -6,18 +6,29 @@
     <body>
         <script>
             function solution(a, b, c) {
-                let answer = "YES",
-                    max;
-                let total = a + b + c;
-                // max에 a,b,c 중 가장 큰 값 저장
-                if (a > b) max = a;
-                else max = b;
-                if (c > max) max = c;
-                // 최대값 외 두 값의 합과 비교
-                if (total - max <= max) answer = "NO";
-                return answer;
+                let sum = a + b + c;
+                let long = Math.max(a, b, c);
+
+                // 가장 긴 변의 길이가 두 변의 길이의 합보다 크거나 같으면 삼각형을 그릴 수 없다.
+                if (long >= sum - long) {
+                    return "NO";
+                }
+                return "YES";
+
+                // let answer = "YES",
+                //     max;
+                // let total = a + b + c;
+                // // max에 a,b,c 중 가장 큰 값 저장
+                // if (a > b) max = a;
+                // else max = b;
+                // if (c > max) max = c;
+                // // 최대값 외 두 값의 합과 비교
+                // if (total - max <= max) answer = "NO";
+                // return answer;
             }
-            console.log(solution(13, 33, 17));
+            console.log(solution(6, 7, 11)); // YES
+            console.log(solution(5, 5, 5)); // YES
+            console.log(solution(13, 33, 17)); // NO
         </script>
     </body>
 </html>

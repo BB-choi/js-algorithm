@@ -6,11 +6,26 @@
     <body>
         <script>
             function solution(a, b, c) {
-                let answer;
-                if (a < b) answer = a;
-                else answer = b;
-                if (c < answer) answer = c;
-                return answer;
+                // return Math.min(a, b, c);
+
+                let min = 0;
+                if (a < b) {
+                    min = a;
+                } else {
+                    min = b;
+                }
+                if (c < min) {
+                    min = c;
+                }
+
+                // if (a < b && a < c) {
+                //     min = a;
+                // } else if (b < a && b < c) {
+                //     min = b;
+                // } else {
+                //     min = c;
+                // }
+                return min;
             }
             console.log(solution(6, 5, 11));
         </script>
