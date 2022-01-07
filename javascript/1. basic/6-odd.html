@@ -7,22 +7,31 @@
         <script>
             function solution(arr) {
                 // 답을 두 개  return
-                let answer = [];
-                let sum = 0,
-                    min = Number.MAX_SAFE_INTEGER;
-                for (let x of arr) {
-                    if (x % 2 == 1) {
-                        sum += x;
-                        if (x < min) min = x;
-                    }
-                }
-                answer.push(sum);
-                answer.push(min);
-                return answer;
+                // let answer = [];
+                // let sum = 0,
+                //     min = Number.MAX_SAFE_INTEGER;
+                // for (let x of arr) {
+                //     if (x % 2 === 1) {
+                //         sum += x;
+                //         if (x < min) min = x;
+                //     }
+                // }
+                // answer.push(sum);
+                // answer.push(min);
+                // return answer;
+
+                let nums = arr.filter((el) => el % 2);
+                let sum = nums.reduce((a, b) => a + b);
+                let min = Math.min(...nums);
+
+                // console.log(sum);
+                // console.log(min);
+                console.log([sum, min]); // programmers
             }
 
             arr = [12, 77, 38, 41, 53, 92, 85];
-            console.log(solution(arr));
+            solution(arr);
+            // console.log(solution(arr));
         </script>
     </body>
 </html>

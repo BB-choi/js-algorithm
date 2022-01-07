@@ -6,14 +6,35 @@
     <body>
         <script>
             function solution(day, arr) {
-                let answer = 0;
-                for (let x of arr) {
-                    if (x % 10 === day) answer++;
-                }
-                return answer;
+                // let answer = 0;
+                // for (let x of arr) {
+                //     if (x % 10 === day) answer++;
+                // }
+                // return answer;
+
+                // let len = arr.length;
+                // let cnt = 0;
+                // for (let i = 0; i < len; i++) {
+                // 날짜의 1의 자리이므로 day가 10인경우를 따로 생각하지 않아도 된다.
+                //     if (day == arr[i].toString().slice(-1)) {
+                //         cnt++;
+                //     }
+                // }
+
+                // for (let i = 0; i < len; i++) {
+                //     if (day === arr[i] % 10) {
+                //         cnt++;
+                //     }
+                // }
+                // return cnt;
+
+                let cars = arr.filter((el) => el % 10 === day);
+                return cars.length;
             }
             arr = [25, 23, 11, 47, 53, 17, 33];
             console.log(solution(3, arr));
+            arr = [20, 23, 11, 40, 53, 17, 33];
+            console.log(solution(0, arr));
         </script>
     </body>
 </html>

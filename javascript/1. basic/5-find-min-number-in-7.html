@@ -6,20 +6,29 @@
     <body>
         <script>
             function solution(arr) {
-                let answer,
-                    // min = arr[0]
-                    // 가장 큰 수로 초기화 : 9007199254740991
-                    min = Number.MAX_SAFE_INTEGER,
-                    i = 0;
-                while (i < arr.length) {
-                    if (arr[i] < min) min = arr[i];
-                    i++;
+                let answer;
+                // min = arr[0]
+                // 가장 큰 수로 초기화 : 9007199254740991
+
+                let min = Number.MAX_SAFE_INTEGER;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
                 }
                 answer = min;
 
-                /* 
+                // let min = Number.MAX_SAFE_INTEGER;
+                // let i = 0;
+                // while (i < arr.length) {
+                //     if (arr[i] < min) min = arr[i];
+                //     i++;
+                // }
+                // answer = min;
+
+                /*
                 // 내장함수 : 전개연산자 사용
-                let answer = Math.min(...arr); 
+                let answer = Math.min(...arr);
                 Math.min.apply(null, arr); // 객체 null
                 // 최대값 Math.max
                 */
