@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function solution(a, b) {
+            /* function solution(a, b) {
                 let answer = "";
                 for (let i = 0; i < a.length; i++) {
                     if (a[i] === b[i]) answer += "D" + " ";
@@ -15,7 +15,36 @@
                     else answer += "B" + " ";
                 }
                 return answer;
+            } */
+
+            function solution(A, B) {
+                let result = [];
+                // [0]이 우승하는 경우, [1]이 패배하는 경우
+                let win = [
+                    [2, 1],
+                    [3, 2],
+                    [1, 3],
+                ];
+                let N = A.length;
+
+                for (let i = 0; i < N; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        let [winner, loser] = win[j];
+                        if (A[i] === winner && B[i] === loser) {
+                            result[i] = "A";
+                            break;
+                        } else if (B[i] === winner && A[i] === loser) {
+                            result[i] = "B";
+                            break;
+                        } else {
+                            result[i] = "D";
+                        }
+                    }
+                }
+
+                return result;
             }
+
             let a = [2, 3, 3, 1, 3];
             let b = [1, 1, 2, 2, 3];
             console.log(solution(a, b));
