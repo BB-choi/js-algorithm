@@ -5,16 +5,29 @@
     </head>
     <body>
         <script>
-            function solution(str) {
-                let answer = "";
-                let max = Number.MIN_SAFE_INTEGER;
-                for (let x of str) {
-                    if (x.length > max) {
-                        max = x.length;
-                        answer = x;
+            // function solution(str) {
+            //     let answer = "";
+            //     let max = Number.MIN_SAFE_INTEGER;
+            //     for (let x of str) {
+            //         if (x.length > max) {
+            //             max = x.length;
+            //             answer = x;
+            //         }
+            //     }
+            //     return answer;
+            // }
+
+            function solution(arr) {
+                let Max = [];
+                Max = arr.reduce((acc, cur) => {
+                    if (cur.length > acc?.length) {
+                        return cur;
+                    } else {
+                        return acc;
                     }
-                }
-                return answer;
+                }, "");
+
+                return Max;
             }
             let str = ["teacher", "time", "student", "beautiful", "good"];
             console.log(solution(str));

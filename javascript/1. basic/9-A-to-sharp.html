@@ -5,19 +5,25 @@
     </head>
     <body>
         <script>
+            // function solution(str) {
+            //     /* let answer = "";
+            //     for (let x of str) {
+            //         if (x === "A") answer += "#";
+            //         else answer += x;
+            //     } */
+            //     // 주소가 들어가는 것이 아니고(주소 참조 아님), 값이 복사됨
+            //     let answer = str;
+            //     // str = str.replace(/A/g, "#");
+            //     // console.log(str); // B#N#N#
+            //     answer = str.replace(/A/g, "#");
+            //     return answer;
+            // }
+
             function solution(str) {
-                /* let answer = "";
-                for (let x of str) {
-                    if (x === "A") answer += "#";
-                    else answer += x;
-                } */
-                // 주소가 들어가는 것이 아니고(주소 참조 아님), 값이 복사됨
-                let answer = str;
-                // str = str.replace(/A/g, "#");
-                // console.log(str); // B#N#N#
-                answer = str.replace(/A/g, "#");
+                let answer = str.replace(/A/g, "#");
                 return answer;
             }
+
             let str = "BANANA";
             console.log(solution(str));
         </script>

@@ -5,20 +5,34 @@
     </head>
     <body>
         <script>
-            function solution(str) {
-                // count
-                let answer = 0;
-                for (let x of str) {
-                    if (x === x.toUpperCase()) answer++;
+            // function solution(str) {
+            //     // count
+            //     let answer = 0;
+            //     for (let x of str) {
+            //         if (x === x.toUpperCase()) answer++;
 
-                    /* // check ascii
-                    // uppercase : 65 ~ 90
-                    // lowercase : 97 ~ 122
-                    let num = x.charCodeAt();
-                    if (num >= 65 && num <= 90) answer++; */
+            //         /* // check ascii
+            //         // uppercase : 65 ~ 90
+            //         // lowercase : 97 ~ 122
+            //         let num = x.charCodeAt();
+            //         if (num >= 65 && num <= 90) answer++; */
+            //     }
+            //     return answer;
+            // }
+
+            function solution(str) {
+                let cnt = 0;
+                for (let i = 0; i < str.length; i++) {
+                    let asciiNum = str.charCodeAt(i);
+                    let [A, Z] = ["A".charCodeAt(), "Z".charCodeAt()];
+                    if (asciiNum >= A && asciiNum <= Z) {
+                        cnt++;
+                    }
                 }
-                return answer;
+
+                return cnt;
             }
+
             let str = "KoreaTimeGood";
             console.log(solution(str));
         </script>

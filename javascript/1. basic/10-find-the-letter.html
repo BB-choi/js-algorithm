@@ -5,15 +5,34 @@
     </head>
     <body>
         <script>
-            function solution(str, letter) {
-                // count
-                /* let answer = 0;
-                for (let x of str) {
-                    if (x === letter) answer++;
-                } */
+            // function solution(str, letter) {
+            //     // count
+            //     /* let answer = 0;
+            //     for (let x of str) {
+            //         if (x === letter) answer++;
+            //     } */
 
-                // letter를 구분자로 분리
-                let answer = str.split(letter).length - 1;
+            //     // letter를 구분자로 분리
+            //     let answer = str.split(letter).length - 1;
+            //     return answer;
+            // }
+
+            // function solution(str, char) {
+            //     let answer = 0;
+            //     for (let i = 0; i < str.length; i++) {
+            //         if (str[i] === char) {
+            //             answer++;
+            //         }
+            //     }
+
+            //     return answer;
+            // }
+
+            function solution(str, char) {
+                let answer = 0;
+                let strToArr = str.split(char);
+                answer = strToArr.length - 1;
+
                 return answer;
             }
 

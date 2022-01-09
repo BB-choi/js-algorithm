@@ -5,21 +5,43 @@
     </head>
     <body>
         <script>
-            function solution(str) {
-                let answer = "";
-                answer = str.toUpperCase();
-                /* for (let x of str) {
-                    // answer += x.toUpperCase();
-                    // if (x === x.toLowerCase()) answer += x.toUpperCase();
-                    // else answer += x;
+            // function solution(str) {
+            //     let answer = "";
+            //     answer = str.toUpperCase();
+            //     /* for (let x of str) {
+            //         // answer += x.toUpperCase();
+            //         // if (x === x.toLowerCase()) answer += x.toUpperCase();
+            //         // else answer += x;
 
-                    let num = x.charCodeAt();
-                    if (num >= 97 && num <= 122)
-                        answer += String.fromCharCode(num - 32);
-                    else answer += x;
-                } */
+            //         let num = x.charCodeAt();
+            //         if (num >= 97 && num <= 122)
+            //             answer += String.fromCharCode(num - 32);
+            //         else answer += x;
+            //     } */
+            //     return answer;
+            // }
+
+            function solution(str) {
+                let diff = "a".charCodeAt() - "A".charCodeAt();
+                console.log("diff", diff);
+                let answer = "";
+
+                for (let i = 0; i < str.length; i++) {
+                    let charAscii = str[i].charCodeAt();
+                    console.log(charAscii);
+                    if (
+                        charAscii >= "a".charCodeAt() &&
+                        charAscii <= "z".charCodeAt()
+                    ) {
+                        answer += String.fromCharCode(charAscii - diff);
+                    } else {
+                        answer += str[i];
+                    }
+                }
+
                 return answer;
             }
+
             let str = "ItisTimeToStudy";
             console.log(solution(str));
         </script>

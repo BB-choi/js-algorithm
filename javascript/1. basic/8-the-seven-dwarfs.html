@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function solution(arr) {
+            /* function solution(arr) {
                 // 얕은 복사, 주소만 복사
                 let answer = arr;
                 let sum = arr.reduce((a, b) => a + b, 0);
@@ -26,7 +26,38 @@
                     i++;
                 }
                 return answer;
+            } */
+
+            function solution(dwarfs) {
+                let answer = [];
+                let len = arr.length;
+                let dwarfsSum = arr.reduce((a, b) => a + b, 0);
+                let flag = 0;
+
+                for (let i = 0; i < len; i++) {
+                    for (let j = 0; j < len; j++) {
+                        if (i === j) {
+                            continue;
+                        }
+                        let sumIJ = arr[i] + arr[j];
+                        if (dwarfsSum - sumIJ === 100) {
+                            flag = 1;
+                            for (let k = 0; k < len; k++) {
+                                if (k !== i && k !== j) {
+                                    answer.push(arr[k]);
+                                }
+                            }
+                            break;
+                        }
+                    }
+                    if (flag) {
+                        break;
+                    }
+                }
+
+                return answer;
             }
+
             let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
             console.log(solution(arr));
         </script>
