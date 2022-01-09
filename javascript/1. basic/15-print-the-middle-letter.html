@@ -5,23 +5,34 @@
     </head>
     <body>
         <script>
+            // function solution(str) {
+            //     let answer;
+            //     // 몫 (홀수일 경우 index가 가운데)
+            //     let middle = Math.floor(str.length / 2);
+            //     // substring (여기부터, 여기 전까지)
+            //     if (str.length % 2 == 1)
+            //         answer = str.substring(middle, middle + 1);
+            //     else if (str.length % 2 == 0)
+            //         answer = str.substring(middle - 1, middle + 1);
+            //     /* // substr (여기부터, n개)
+            //     if (str.length % 2 == 1)
+            //         answer = str.substr(middle, 1);
+            //     else if (str.length % 2 == 0)
+            //         answer = str.substr(middle - 1, 2); */
+            //     return answer;
+            // }
+
             function solution(str) {
-                let answer;
-                // 몫 (홀수일 경우 index가 가운데)
-                let middle = Math.floor(str.length / 2);
-                // substring (여기부터, 여기 전까지)
-                if (str.length % 2 == 1)
-                    answer = str.substring(middle, middle + 1);
-                else if (str.length % 2 == 0)
-                    answer = str.substring(middle - 1, middle + 1);
-                /* // substr (여기부터, n개)
-                if (str.length % 2 == 1)
-                    answer = str.substr(middle, 1);
-                else if (str.length % 2 == 0)
-                    answer = str.substr(middle - 1, 2); */
-                return answer;
+                let len = str.length;
+                if (len % 2) {
+                    return str[Math.floor(len / 2)];
+                } else {
+                    return str[len / 2 - 1] + str[len / 2];
+                }
             }
+
             console.log(solution("study"));
+            console.log(solution("good"));
         </script>
     </body>
 </html>

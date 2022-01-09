@@ -5,18 +5,43 @@
     </head>
     <body>
         <script>
-            function solution(str) {
-                let answer;
-                // console.log(str.indexOf("time"));
-                // filter 새로운 배열을 생성
-                answer = str.filter(
-                    (val, i) => str.indexOf(val) === i
-                    /* { if (str.indexOf(val) === i) return true; 
-                    // return s.indexOf(val) === i;
-                    } */
-                );
+            // function solution(str) {
+            //     let answer;
+            //     // console.log(str.indexOf("time"));
+            //     // filter 새로운 배열을 생성
+            //     answer = str.filter(
+            //         (val, i) => str.indexOf(val) === i
+            //         /* { if (str.indexOf(val) === i) return true;
+            //         // return s.indexOf(val) === i;
+            //         } */
+            //     );
+            //     return answer;
+            // }
+
+            function solution(arr) {
+                let N = arr.length;
+                let answer = [];
+
+                // for (let i = 0; i < N; i++) {
+                //     if (answer.includes(arr[i])) {
+                //         continue;
+                //     } else {
+                //         answer.push(arr[i]);
+                //     }
+                // }
+
+                // answer = arr.reduce((acc, cur) => {
+                //     if (acc.includes(cur)) {
+                //         return acc;
+                //     } else {
+                //         return [...acc, cur];
+                //     }
+                // }, []);
+
+                answer = arr.filter((el, i) => i === arr.indexOf(el));
                 return answer;
             }
+
             let str = ["good", "time", "good", "time", "student"];
             console.log(solution(str));
         </script>

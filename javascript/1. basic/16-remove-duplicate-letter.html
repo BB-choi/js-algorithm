@@ -5,21 +5,28 @@
     </head>
     <body>
         <script>
-            function solution(str) {
-                let answer = "";
-                /* console.log(str.indexOf("k"));
-                // 첫번째로 발견되는 인덱스를 return, 0
-                console.log(str.indexOf("k", 1));
-                // 1번 인덱스부터 k를 탐색, 3
-                // 발견하지 못하는 경우 -1 return */
-                for (let i = 0; i < str.length; i++) {
-                    // console.log(str[i], i, str.indexOf(str[i]));
-                    if (i === str.indexOf(str[i])) answer += str[i];
-                }
+            // function solution(str) {
+            //     let answer = "";
+            //     /* console.log(str.indexOf("k"));
+            //     // 첫번째로 발견되는 인덱스를 return, 0
+            //     console.log(str.indexOf("k", 1));
+            //     // 1번 인덱스부터 k를 탐색, 3
+            //     // 발견하지 못하는 경우 -1 return */
+            //     for (let i = 0; i < str.length; i++) {
+            //         // console.log(str[i], i, str.indexOf(str[i]));
+            //         if (i === str.indexOf(str[i])) answer += str[i];
+            //     }
 
-                return answer;
+            //     return answer;
+            // }
+
+            function solution(str) {
+                let strSet = [...new Set(str)];
+                return strSet.join("");
             }
+
             console.log(solution("ksekkset"));
+            console.log(solution("jjiikkll12ll12"));
         </script>
     </body>
 </html>
