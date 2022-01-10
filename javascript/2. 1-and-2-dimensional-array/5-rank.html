@@ -5,19 +5,39 @@
     </head>
     <body>
         <script>
-            function solution(arr) {
-                const len = arr.length;
-                let answer = Array.from({ length: len }, () => 1);
-                for (let i = 0; i < len; i++) {
-                    for (let j = 0; j < len; j++) {
-                        if (arr[j] > arr[i]) answer[i]++;
-                    }
-                }
+            // function solution(arr) {
+            //     const len = arr.length;
+            //     let answer = Array.from({ length: len }, () => 1);
+            //     for (let i = 0; i < len; i++) {
+            //         for (let j = 0; j < len; j++) {
+            //             if (arr[j] > arr[i]) answer[i]++;
+            //         }
+            //     }
 
-                return answer;
+            //     return answer;
+            // }
+
+            function solution(arr) {
+                let copy = arr.slice();
+                let result = [];
+                copy.sort((a, b) => b - a);
+
+                for (let i = 0; i < arr.length; i++) {
+                    result.push(copy.indexOf(arr[i]) + 1);
+                }
+                return result;
             }
+
+            // function solution(arr) {
+            //     let result = [];
+            //     result = arr.map((i) => arr.filter((j) => j > i).length + 1);
+
+            //     return result;
+            // }
+
             let arr = [87, 89, 92, 100, 76];
             console.log(solution(arr));
+            console.log(solution([100, 100, 100, 20, 20]));
         </script>
     </body>
 </html>

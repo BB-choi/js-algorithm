@@ -5,21 +5,38 @@
     </head>
     <body>
         <script>
+            // function solution(arr) {
+            //     let answer = 0,
+            //         count = 0;
+            //     /* let i = 0;
+            //     while (i < arr.length) {
+            //         if (arr[i] > 0) count++;
+            //         else if (arr[i] === 0) count = 0;
+            //         answer += count;
+            //         i++;
+            //     } */
+            //     for (let x of arr) {
+            //         if (x === 1) count++;
+            //         else count = 0;
+            //         answer += count;
+            //     }
+            //     return answer;
+            // }
+
             function solution(arr) {
-                let answer = 0,
-                    count = 0;
-                /* let i = 0;
-                while (i < arr.length) {
-                    if (arr[i] > 0) count++;
-                    else if (arr[i] === 0) count = 0;
-                    answer += count;
-                    i++;
-                } */
-                for (let x of arr) {
-                    if (x === 1) count++;
-                    else count = 0;
-                    answer += count;
+                let answer = 0;
+                let N = arr.length;
+                let cnt = 1;
+
+                for (let i = 0; i < N; i++) {
+                    if (arr[i]) {
+                        cnt++;
+                    } else {
+                        answer += cnt;
+                        cnt = 1;
+                    }
                 }
+
                 return answer;
             }
 
