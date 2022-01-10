@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function solution(arr) {
+            /* function solution(arr) {
                 // 최대값 저장
                 let answer = Number.MIN_SAFE_INTEGER;
                 // 열크기
@@ -31,6 +31,37 @@
                 answer = Math.max(answer, sum1, sum2);
 
                 return answer;
+            } */
+
+            function solution(arr) {
+                let N = arr.length;
+                let max = 0;
+
+                // 열, 대각선1 (0.0 ~)
+                let sum1 = 0;
+                // 행, 대각선2 (0.4~)
+                let sum2 = 0;
+                for (let i = 0; i < N; i++) {
+                    sum1 = 0;
+                    sum2 = 0;
+                    for (let j = 0; j < N; j++) {
+                        sum1 += arr[i][j];
+                        sum2 += arr[j][i];
+                    }
+                    // 행, 열 최대값
+                    max = Math.max(max, sum1, sum2);
+                }
+
+                sum1 = 0;
+                sum2 = 0;
+                for (let i = 0; i < N; i++) {
+                    sum1 += arr[i][i];
+                    sum2 += arr[i][N - 1 - i];
+                }
+                // 행, 열의 최대값과 대각선1, 대각선2 최대값
+                max = Math.max(max, sum1, sum2);
+
+                return max;
             }
 
             let arr = [

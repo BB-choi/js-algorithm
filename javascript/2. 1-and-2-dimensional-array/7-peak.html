@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function solution(arr) {
+            /* function solution(arr) {
                 let answer = 0;
                 const len = arr.length;
                 // 상하좌우 x, y
@@ -33,6 +33,34 @@
                     }
                 }
                 return answer;
+            } */
+
+            function solution(arr) {
+                let N = arr.length;
+                let peak = 0;
+
+                for (let i = 0; i < N; i++) {
+                    let [u, d, l, r] = [0, 0, 0, 0];
+                    for (let j = 0; j < N; j++) {
+                        if (i > 0) {
+                            u = arr[i - 1][j];
+                        }
+                        if (j > 0) {
+                            l = arr[i][j - 1];
+                        }
+                        if (i + 1 < N) {
+                            d = arr[i + 1][j];
+                        }
+                        if (j + 1 < N) {
+                            r = arr[i][j + 1];
+                        }
+                        if (arr[i][j] === Math.max(arr[i][j], u, d, l, r)) {
+                            peak++;
+                        }
+                    }
+                }
+
+                return peak;
             }
 
             let arr = [
