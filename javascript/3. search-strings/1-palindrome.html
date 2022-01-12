@@ -23,12 +23,6 @@
 
             function solution(str) {
                 let answer = "YES";
-
-                if (str.length % 2) {
-                    answer = "NO";
-                    return answer;
-                }
-
                 let newStr = str.toLowerCase();
 
                 for (let i = 0; i < newStr.length / 2 - 1; i++) {
@@ -42,7 +36,8 @@
                 return answer;
             }
 
-            let str = "gooG";
+            // let str = "gooG";
+            let str = "go1oG";
             console.log(solution(str));
         </script>
     </body>
