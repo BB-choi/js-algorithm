@@ -29,6 +29,40 @@ var isPalindrome = function (x) {
     return true;
 };
 
+// reference : https://leetcode.com/problems/palindrome-number/solution/
+var isPalindrome = function (x) {
+    if (x < 0 || (x % 10 === 0 && x !== 0)) {
+        return false;
+    }
+    let reversedX = 0;
+    while (x > reversedX) {
+        reversedX = reversedX * 10 + (x % 10);
+        x = parseInt(x / 10);
+    }
+    // x의 길이가 홀수인 경우 남는 자리수가 있을 수 있다.
+    if (x === reversedX || x === parseInt(reversedX / 10)) {
+        return true;
+    }
+    return false;
+};
+
+var isPalindrome = function (x) {
+    if (x < 0) {
+        return false;
+    }
+
+    let num = x;
+    let reversedX = 0;
+    while (num) {
+        reversedX = reversedX * 10 + (num % 10);
+        num = Math.floor(num / 10);
+    }
+    if (reversedX === x) {
+        return true;
+    }
+    return false;
+};
+
 console.log(isPalindrome(121));
 console.log(isPalindrome(-121));
 console.log(isPalindrome(10));
