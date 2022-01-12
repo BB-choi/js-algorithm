@@ -14,10 +14,10 @@ var twoSum = function (nums, target) {
     let numsMap = new Map();
 
     for (let i = 0; i < len; i++) {
-        let key = target - nums[i];
+        let temp = target - nums[i];
 
-        if (numsMap.has(key)) {
-            answer = [numsMap.get(key), i];
+        if (numsMap.has(temp)) {
+            answer = [numsMap.get(temp), i];
             return answer;
         }
         numsMap.set(nums[i], i);
@@ -32,8 +32,8 @@ const twoSum = function (nums, target) {
     let len = nums.length;
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {
-            let key = target - nums[i];
-            if (nums[j] === key) {
+            let temp = target - nums[i];
+            if (nums[j] === temp) {
                 answer = [i, j];
                 return answer;
             }
