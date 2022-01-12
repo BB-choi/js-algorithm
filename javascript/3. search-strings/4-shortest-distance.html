@@ -5,51 +5,83 @@
     </head>
     <body>
         <script>
-            function solution(s, t) {
-                // t를 왼쪽에서부터 떨어진거리, 오른쪽에서부터 떨어진 거리를 구한다.
-                /* const left = [];
-                const right = [];
-                let answer = [];
+            // function solution(s, t) {
+            //     // t를 왼쪽에서부터 떨어진거리, 오른쪽에서부터 떨어진 거리를 구한다.
+            //     /* const left = [];
+            //     const right = [];
+            //     let answer = [];
 
-                let cnt = 0;
-                for (let i = 0; i < s.length; i++) {
-                    if (s[i] !== t) cnt++;
-                    else cnt = 0;
-                    left.push(cnt);
-                }
-                for (let i = s.length - 1; i >= 0; i--) {
-                    if (s[i] !== t) cnt++;
-                    else cnt = 0;
-                    right.unshift(cnt);
-                }
-                for (let i = 0; i < left.length; i++) {
-                    if (left[i] < right[i]) answer.push(left[i]);
-                    else if (left[i] > right[i]) answer.push(right[i]);
-                    else answer.push(left[i]);
-                } */
+            //     let cnt = 0;
+            //     for (let i = 0; i < s.length; i++) {
+            //         if (s[i] !== t) cnt++;
+            //         else cnt = 0;
+            //         left.push(cnt);
+            //     }
+            //     for (let i = s.length - 1; i >= 0; i--) {
+            //         if (s[i] !== t) cnt++;
+            //         else cnt = 0;
+            //         right.unshift(cnt);
+            //     }
+            //     for (let i = 0; i < left.length; i++) {
+            //         if (left[i] < right[i]) answer.push(left[i]);
+            //         else if (left[i] > right[i]) answer.push(right[i]);
+            //         else answer.push(left[i]);
+            //     } */
+            //     let answer = [];
+            //     let p = 1000;
+            //     for (let x of s) {
+            //         if (x === t) {
+            //             p = 0;
+            //             answer.push(p);
+            //         } else {
+            //             p++;
+            //             answer.push(p);
+            //         }
+            //     }
+            //     p = 1000;
+            //     for (let i = s.length - 1; i >= 0; i--) {
+            //         if (s[i] === t) {
+            //             p = 0;
+            //             // 기존에 들어있는 값도 0
+            //             // answer[i] = p;
+            //         } else {
+            //             p++;
+            //             answer[i] = Math.min(answer[i], p);
+            //         }
+            //     }
+
+            //     return answer;
+            // }
+
+            function solution(s, t) {
+                let fromLeft = [];
+                let fromRight = [];
                 let answer = [];
-                let p = 1000;
-                for (let x of s) {
-                    if (x === t) {
-                        p = 0;
-                        answer.push(p);
+                let cnt = 0;
+
+                for (let i = 0; i < s.length; i++) {
+                    if (s[i] === t) {
+                        cnt = 0;
                     } else {
-                        p++;
-                        answer.push(p);
+                        cnt++;
                     }
+                    fromLeft.push(cnt);
                 }
-                p = 1000;
+
                 for (let i = s.length - 1; i >= 0; i--) {
                     if (s[i] === t) {
-                        p = 0;
-                        // 기존에 들어있는 값도 0
-                        // answer[i] = p;
+                        cnt = 0;
                     } else {
-                        p++;
-                        answer[i] = Math.min(answer[i], p);
+                        cnt++;
                     }
+                    // fromRight.push(cnt);
+                    answer[i] = Math.min(fromLeft[i], cnt);
                 }
-
+                // push로 하면 index 0부터 들어가므로 reverse()필요
+                // fromRight.reverse();
+                // for (let i = 0; i < s.length; i++) {
+                //     answer.push(Math.min(fromLeft[i], fromRight[i]));
+                // }
                 return answer;
             }
 

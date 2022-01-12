@@ -5,23 +5,44 @@
     </head>
     <body>
         <script>
-            function solution(s) {
+            // function solution(s) {
+            //     let answer = "YES";
+            //     let str = s.toLowerCase();
+            //     /* let len = str.length;
+            //     for (let i = 0; i < Math.floor(len / 2); i++) {
+            //         if (str[i] !== str[len - i - 1]) answer = "NO"; // return "NO";
+            //     } */
+            //     // reverse 사용 위해 배열로 만들기
+            //     //console.log(str.split("").reverse().join());
+            //     // console.log(str.split(""));
+            //     // console.log(str.split("").reverse());
+            //     if (str.split("").join() !== str.split("").reverse().join())
+            //         answer = "NO";
+            //     return answer;
+            // }
+
+            function solution(str) {
                 let answer = "YES";
-                let str = s.toLowerCase();
-                /* let len = str.length;
-                for (let i = 0; i < Math.floor(len / 2); i++) {
-                    if (str[i] !== str[len - i - 1]) answer = "NO"; // return "NO";
-                } */
-                // reverse 사용 위해 배열로 만들기
-                //console.log(str.split("").reverse().join());
-                // console.log(str.split(""));
-                // console.log(str.split("").reverse());
-                if (str.split("").join() !== str.split("").reverse().join())
+
+                if (str.length % 2) {
                     answer = "NO";
+                    return answer;
+                }
+
+                let newStr = str.toLowerCase();
+
+                for (let i = 0; i < newStr.length / 2 - 1; i++) {
+                    if (newStr[i] !== newStr[newStr.length - 1 - i]) {
+                        answer = "NO";
+                        return answer;
+                    }
+                }
+
+                // console.log(newStr.split("").reverse().join("") === newStr);
                 return answer;
             }
 
-            let str = "goog";
+            let str = "gooG";
             console.log(solution(str));
         </script>
     </body>

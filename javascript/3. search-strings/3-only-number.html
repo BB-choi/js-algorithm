@@ -5,27 +5,41 @@
     </head>
     <body>
         <script>
+            // function solution(str) {
+            //     /* let answer = "";
+            //     const s = str.replace(/[^0-9]/g, "");
+            //     answer = parseInt(s, 10); // parseInt(string, radix); */
+
+            //     /* let answer = "";
+            //     for (let x of str) {
+            //         // if (x >= 0 && x <= 9) answer += x;
+            //         if (!isNaN(x)) answer += x;
+            //     }
+            //     // parseInt하면 앞의 0 삭제
+            //     return parseInt(answer, 10); */
+
+            //     let answer = 0;
+            //     for (let x of str) {
+            //         if (!isNaN(x)) answer = answer * 10 + Number(x);
+            //     }
+            //     return answer;
+            // }
+
             function solution(str) {
-                /* let answer = "";
-                const s = str.replace(/[^0-9]/g, "");
-                answer = parseInt(s, 10); // parseInt(string, radix); */
+                let newStr = str.replace(/[^0-9]/g, "");
+                let answer = "";
 
-                /* let answer = "";
-                for (let x of str) {
-                    // if (x >= 0 && x <= 9) answer += x;
-                    if (!isNaN(x)) answer += x;
+                while (newStr[0] === "0") {
+                    newStr = newStr.slice(1);
                 }
-                // parseInt하면 앞의 0 삭제
-                return parseInt(answer, 10); */
-
-                let answer = 0;
-                for (let x of str) {
-                    if (!isNaN(x)) answer = answer * 10 + Number(x);
-                }
+                // answer = parseInt(newStr, 10)
+                // answer = Number(newStr)
+                answer = newStr;
                 return answer;
             }
 
             let str = "g0en2T0s8eSoft";
+            // let str = "00042342342";
             console.log(solution(str));
         </script>
     </body>

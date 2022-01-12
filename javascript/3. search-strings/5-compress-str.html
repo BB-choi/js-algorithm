@@ -5,46 +5,65 @@
     </head>
     <body>
         <script>
-            function solution(s) {
-                let answer = "";
-                /* 
+            // function solution(s) {
+            //     let answer = "";
+            //     /*
+            //     let cnt = 1;
+            //     s=s+" ";
+            //     for(let i=0; i<s.length-1; i++){
+            //         if(s[i]===s[i+1]) cnt++;
+            //         else{
+            //             answer+=s[i];
+            //             if(cnt>1) answer+=String(cnt);
+            //             cnt=1;
+            //         }
+            //     } */
+            //     let count = 1;
+            //     for (let i = 0; i < s.length; i++) {
+            //         if (s[i] === s[i + 1]) {
+            //             count++;
+            //         } else {
+            //             answer += s[i];
+            //             if (count > 1) answer += count;
+            //             count = 1;
+            //         }
+            //     }
+            //     /*
+            //     let count = 0;
+            //     for (let i = 0; i < s.length; i++) {
+            //         count++;
+            //         // console.log(s[i + 1]);
+            //         // s[i + 1] 이 length - 1 을 벗어나면 undefined
+            //         if (s[i] != s[i + 1]) {
+            //             answer += s[i];
+            //             if (count > 1) answer += count;
+            //             count = 0;
+            //         }
+            //     }*/
+
+            //     return answer;
+            // }
+
+            function solution(str) {
+                let len = str.length;
                 let cnt = 1;
-                s=s+" ";
-                for(let i=0; i<s.length-1; i++){
-                    if(s[i]===s[i+1]) cnt++;
-                    else{
-                        answer+=s[i];
-                        if(cnt>1) answer+=String(cnt);
-                        cnt=1;
-                    }
-                } */
-                let count = 1;
-                for (let i = 0; i < s.length; i++) {
-                    if (s[i] === s[i + 1]) {
-                        count++;
+                let char = "";
+                let answer = "";
+
+                for (let i = 0; i < str.length; i++) {
+                    if (str[i] !== char) {
+                        if (i > 0 && cnt > 1) answer += `${cnt}`;
+                        char = str[i];
+                        answer += `${char}`;
+                        cnt = 1;
                     } else {
-                        answer += s[i];
-                        if (count > 1) answer += count;
-                        count = 1;
+                        cnt++;
                     }
                 }
-                /*
-                let count = 0;
-                for (let i = 0; i < s.length; i++) {
-                    count++;
-                    // console.log(s[i + 1]);
-                    // s[i + 1] 이 length - 1 을 벗어나면 undefined
-                    if (s[i] != s[i + 1]) {
-                        answer += s[i];
-                        if (count > 1) answer += count;
-                        count = 0;
-                    }
-                }*/
-
                 return answer;
             }
 
-            // let str = "KKHSSSSSSSE";
+            let str = "KKHSSSSSSSE";
             console.log(solution(str));
         </script>
     </body>
