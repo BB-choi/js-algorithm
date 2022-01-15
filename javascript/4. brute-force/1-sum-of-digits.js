@@ -1,10 +1,9 @@
-function solution(n, arr) {
+/* function solution(n, arr) {
     let answer;
-    let arrLen = arr.length;
     let sumNums = [];
 
     arr.sort((a, b) => b - a);
-    for (let i = 0; i < arrLen; i++) {
+    for (let i = 0; i < n; i++) {
         let temp = arr[i];
         let sum = 0;
         while (temp) {
@@ -15,6 +14,44 @@ function solution(n, arr) {
     }
     answer = arr[sumNums.indexOf(Math.max(...sumNums))];
 
+    return answer;
+} */
+
+/* function solution(n, arr) {
+    let answer = 0,
+        max = Number.MIN_SAFE_INTEGER;
+
+    for (let x of arr) {
+        let sum = 0,
+            tmp = x;
+
+        while (tmp) {
+            sum += tmp % 10;
+            tmp = Math.floor(tmp / 10);
+        }
+        if (sum >= max && x > answer) {
+            max = sum;
+            answer = x;
+        }
+    }
+    return answer;
+} */
+
+function solution(n, arr) {
+    let answer = 0,
+        max = Number.MIN_SAFE_INTEGER;
+
+    for (let x of arr) {
+        let sum = x
+            .toString()
+            .split("")
+            .reduce((a, b) => Number(a) + Number(b));
+
+        if (sum >= max && x > answer) {
+            max = sum;
+            answer = x;
+        }
+    }
     return answer;
 }
 
