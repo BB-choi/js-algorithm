@@ -20,8 +20,37 @@ function solution(array, commands) {
     return answer;
 }
 
+function newSolution(array, commands) {
+    let cmdLength = commands.length;
+    let answer = [];
+
+    for (let i = 0; i < cmdLength; i++) {
+        let [from, to, k] = commands[i];
+        from--;
+        to--;
+        k--;
+        let newArr = array
+            .filter((el, i) => i >= from && i <= to)
+            .sort((a, b) => a - b);
+        answer.push(newArr[k]);
+    }
+
+    return answer;
+}
+
 console.log(
     solution(
+        [1, 5, 2, 6, 3, 7, 4],
+        [
+            [2, 5, 3],
+            [4, 4, 1],
+            [1, 7, 3],
+        ]
+    )
+);
+
+console.log(
+    newSolution(
         [1, 5, 2, 6, 3, 7, 4],
         [
             [2, 5, 3],
