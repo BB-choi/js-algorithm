@@ -12,9 +12,12 @@ function solution(id_list, report, k) {
         cur = cur.split(" ");
         let [reporter, reported] = cur;
 
-        if (!reportResult[reported].report.has(reporter))
+        if (!reportResult[reported].report.has(reporter)) {
             reportResult[reported].count++;
-        reportResult[reported].report.add(reporter);
+            reportResult[reported].report.add(reporter);
+        }
+        // reportResult[reported].report.add(reporter);
+        // 밖으로 빼도 결과는 같음 (Set이기 때문)
     }
 
     for (let cur in reportResult) {
