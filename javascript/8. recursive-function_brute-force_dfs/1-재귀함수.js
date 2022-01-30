@@ -15,3 +15,17 @@ function solution(n) {
 }
 
 console.log(solution(3));
+
+function another(n) {
+    str = "";
+    function DFS(L) {
+        if (L === 0) return;
+        DFS(L - 1);
+        // console.log(L);
+        str += L + " ";
+    }
+    DFS(3);
+    console.log(str);
+}
+
+another(3);
