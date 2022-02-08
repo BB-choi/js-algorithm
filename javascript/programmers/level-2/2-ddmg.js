@@ -7,8 +7,10 @@ function solution(lands) {
     let sum = 0;
 
     for (let i = 1; i < N; i++) {
+        // 현재 행의 열
         for (let j = 0; j < 4; j++) {
             let max = Number.MIN_SAFE_INTEGER;
+            // 이전 행의 열
             for (let k = 0; k < 4; k++) {
                 if (k !== j) {
                     max = Math.max(max, lands[i - 1][k]);
