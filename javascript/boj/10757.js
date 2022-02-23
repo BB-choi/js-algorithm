@@ -1,7 +1,7 @@
 // 10757 - 큰 수 A+B
 
 let path = "/dev/stdin";
-path = "input.txt";
+// path = "input.txt";
 
 let [A, B] = require("fs")
     .readFileSync(path)

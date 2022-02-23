@@ -1,5 +1,6 @@
 // 1000 - A+B
 
+// 입출력 확인하기
 let path = "/dev/stdin";
 // path = "input.txt";
 
