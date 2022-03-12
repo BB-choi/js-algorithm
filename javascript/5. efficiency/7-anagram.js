@@ -46,9 +46,8 @@ function newSolution(str1, str2) {
   }
 
   for (const x of str2) {
-    if (!map.has(x) || map.get(x) <= 0) {
-      answer = "NO";
-      break;
+    if (!map.has(x) || !map.get(x)) {
+      return "NO";
     }
     map.set(x, map.get(x) - 1);
   }
