@@ -12,12 +12,8 @@ function solution(record) {
     switch (cmd) {
       case "Enter":
         msg = "님이 들어왔습니다.";
-        if (!ids.get(userId)) {
+        if (!ids.get(userId) || ids.get(userId) !== curName) {
           ids.set(userId, curName);
-        } else {
-          if (ids.get(userId) !== curName) {
-            ids.set(userId, curName);
-          }
         }
         answer.push([userId, msg]);
         break;
