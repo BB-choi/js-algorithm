@@ -6,10 +6,7 @@ function solution(A, B) {
 
   const lenA = A.length;
   const lenB = B.length;
-
-  A.sort((a, b) => a - b);
-  B.sort((a, b) => b - a);
-
+  
   answer = A.reduce((prev, cur, idx) => {
     return prev + cur * B[idx];
   }, 0);
