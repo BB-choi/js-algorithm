@@ -12,6 +12,8 @@ for (let i = 1; i <= N; i++) {
   arr[i - 1] = input[i].split(" ").map(Number);
 }
 
+R = R % ((N - 1) * 2 + (M - 1) * 2);
+
 // 회전시키기
 while (R) {
   for (let count = 0; count < Math.min(N, M) / 2; count++) {
