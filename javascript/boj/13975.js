@@ -89,3 +89,8 @@ for (let i = 1; i <= T * 2; i += 2) {
 
   console.log(cost);
 }
+
+// reference
+// https://junghyeonsu.tistory.com/281
+
+// keywords: 최소힙, minHeap, 우선순위 큐
