@@ -28,15 +28,6 @@ for (let i = 0; i < n; i++) {
     continue;
   }
 
-  // if (i === X) {
-  //   if (지난찬성수[j] >= Y) {
-  //     지난찬성수[i] = 지난찬성수[j] ? 지난찬성수[j] + 1 : 1;
-  //   } else {
-  //     지난찬성수[i] = 지난찬성수[j];
-  //   }
-  //   continue;
-  // }
-
   if (지난찬성수[j] - (지난찬성수[j - X] ? 지난찬성수[j - X] : 0) >= Y) {
     지난찬성수[i] = 지난찬성수[j] ? 지난찬성수[j] + 1 : 1;
     continue;
@@ -46,31 +37,3 @@ for (let i = 0; i < n; i++) {
 }
 
 console.log(지난찬성수[n - 1]);
-
-/* let cur = [];
-for (let i = 0; i < n; i++) {
-  const [X, Y] = arr[i].split(" ").map(Number);
-
-  if (Y === X + 1) {
-    cur.push(0);
-    continue;
-  }
-
-  if (Y === 0) {
-    cur.push(1);
-    continue;
-  }
-
-  if (i > Y + 1) {
-    cur.push(0);
-  }
-
-  if (cur.slice(-1 * X).filter((el) => el).length >= Y) {
-    cur.push(1);
-    continue;
-  }
-
-  cur.push(0);
-}
-
-console.log(cur.filter((el) => el).length); */
